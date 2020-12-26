@@ -21,17 +21,17 @@
 % на которые есть ссылка в документе
 \mathtoolsset{showonlyrefs=true} 
 
-\usepackage{hyperref}
  % Цвета для гиперссылок
 \definecolor{linkcolor}{HTML}{000000} % цвет ссылок
 \definecolor{urlcolor}{HTML}{799B03} % цвет гиперссылок
  
+\usepackage{xcolor}
 \usepackage[
-	unicode, 
-	colorlinks, 
-	urlcolor=black, 
-	linkcolor=black,
-	citecolor=black
+    unicode, 
+    colorlinks, 
+    urlcolor=urlcolor, 
+    linkcolor=linkcolor,
+    citecolor=linkcolor
 ]{hyperref}
 
 % Увеличенный межстрочный интервал, французские пробелы
