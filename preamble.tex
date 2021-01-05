@@ -42,6 +42,27 @@
 %  Пользовательские команды  %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+\makeatletter
+    \newcommand{\fftStar}[1]{\mathfrak{F}^*\qty[#1]}
+    \newcommand{\fftNoStar}[1]{\mathfrak{F}\qty[#1]}
+    \newcommand{\fft}{
+                 \@ifstar
+                 \fftStar%
+                 \fftNoStar%
+    }
+\makeatother
+
+\makeatletter
+    \newcommand{\ifftNoStar}[1]{\mathfrak{F}^{-1}\qty[#1]}
+    \newcommand{\ifftStar}[1]{\qty(\mathfrak{F}^{-1}\qty[#1])^*}
+    \newcommand{\ifft}{
+                 \@ifstar
+                 \ifftStar%
+                 \ifftNoStar%
+    }
+\makeatother
+
 \newcommand{\mean}[1]{\langle#1\rangle}
 \newcommand\ct[1]{\text{\rmfamily\upshape #1}}
 \newcommand*{\const}{\ct{const}}
