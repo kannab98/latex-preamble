@@ -1,8 +1,8 @@
 \documentclass[a4paper,14pt]{extarticle}
 
-\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage[T2A]{fontenc}
-\usepackage[russian]{babel}
+\usepackage[english, russian]{babel}
 
 \usepackage[mode=buildnew]{standalone}
 \usepackage{setspace}
@@ -12,7 +12,7 @@
 \usepackage{
 	amssymb, amsfonts, amsmath, amsthm, physics,
 	cancel, indentfirst,makecell,multirow, 
-	graphicx, tikz, mathtools, float, setspace
+	graphicx, tikz, mathtools, float, setspace,caption,subcaption
 } 
 
 \usepackage{mathtools}
@@ -70,6 +70,9 @@
 \renewcommand{\epsilon}{\varepsilon}
 %\renewcommand{\sigma}{\varsigma}
 
+
+\captionsetup{subrefformat=parens}
+
 \usepackage{array}
 \usepackage{pstool}
 
@@ -117,10 +120,42 @@
 
 % Колонтитулы
 \usepackage{fancyhdr} 
-	\pagestyle{fancy} 
+	\pagestyle{plain} 
 	\fancyhead{} 
 	\fancyhead[R]{} 
 	\fancyhead[L]{} 
 	\fancyfoot{} 
 	\fancyfoot[C]{\thepage} 
 
+\usepackage[autostyle]{csquotes}
+\usepackage{siunitx}
+\usepackage[%
+  style=numeric,
+  isbn=true,
+  url=true,
+  defernumbers=true,
+  sorting=ynt, % "Sort by name, year, title."
+  %sorting=none, % "Do not sort at all. All entries are processed in citation order." (order of appearance)
+  bibencoding=utf8,
+  backend=biber,
+  %backend=bibtex8,
+  %language=auto,    % get main language from babel
+  %autolang=other,
+  %sortlocale=en_US,
+  %sortyear = {<year>-<number>}
+  %sortlocale=ru_RU,
+]{biblatex}
+
+
+\usepackage{nomencl}
+\makenomenclature  
+
+\makeatletter
+    \newcommand{\whereNoStar}[2]{#1 -- #2\nomenclature{#1}{#2}}
+    \newcommand{\whereStar}[2]{#1\nomenclature{#1}{#2}}
+    \newcommand{\where}{
+                 \@ifstar
+                 \whereStar%
+                 \whereNoStar%
+    }
+\makeatother
