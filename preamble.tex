@@ -134,15 +134,12 @@
   isbn=true,
   url=true,
   defernumbers=true,
-  sorting=ynt, % "Sort by name, year, title."
-  %sorting=none, % "Do not sort at all. All entries are processed in citation order." (order of appearance)
+  %sorting=nyt, % "Sort by name, year, title."
+  sorting=none, % "Do not sort at all. All entries are processed in citation order." (order of appearance)
   bibencoding=utf8,
   backend=biber,
-  %backend=bibtex8,
-  %language=auto,    % get main language from babel
-  %autolang=other,
-  %sortlocale=en_US,
-  %sortyear = {<year>-<number>}
+  babel=other,
+  sortlocale=en_US,
   %sortlocale=ru_RU,
 ]{biblatex}
 
