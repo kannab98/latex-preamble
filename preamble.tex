@@ -126,33 +126,3 @@
 	\fancyhead[L]{} 
 	\fancyfoot{} 
 	\fancyfoot[C]{\thepage} 
-
-\usepackage[autostyle]{csquotes}
-\usepackage{siunitx}
-\usepackage[%
-  style=numeric,
-  isbn=true,
-  url=true,
-  defernumbers=true,
-  %sorting=nyt, % "Sort by name, year, title."
-  sorting=none, % "Do not sort at all. All entries are processed in citation order." (order of appearance)
-  bibencoding=utf8,
-  backend=biber,
-  babel=other,
-  sortlocale=en_US,
-  %sortlocale=ru_RU,
-]{biblatex}
-
-
-\usepackage{nomencl}
-\makenomenclature  
-
-\makeatletter
-    \newcommand{\whereNoStar}[2]{#1 -- #2\nomenclature{#1}{#2}}
-    \newcommand{\whereStar}[2]{#1\nomenclature{#1}{#2}}
-    \newcommand{\where}{
-                 \@ifstar
-                 \whereStar%
-                 \whereNoStar%
-    }
-\makeatother
