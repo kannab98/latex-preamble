@@ -1,0 +1,19 @@
+\usepackage{transparent}
+\def\opacity{0.6}
+
+\usepackage{fancyhdr} 
+	\pagestyle{fancy} 
+	\fancyhead{} 
+    \fancyhead[L]{\transparent{\opacity}\includegraphics[scale=0.8]{logo.png}} 
+    \fancyhead[R]{
+        \small\transparent{\opacity}\textbf{
+            Radio Lab NN, Ltd. \\ 
+            R\&D in wireless communications}
+        } 
+	\fancyfoot{} 
+    \fancyfoot[C]{\transparent{\opacity}\textbf{Radio Lab NN Confidential}} 
+	\fancyfoot[R]{} 
+
+\setlength\headheight{ 1  cm}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
